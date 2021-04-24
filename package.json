@@ -4,7 +4,9 @@
   "description": "TypeScript InsuranceCompany using Redux",
   "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./dist/index.js",
+    "dev": "nodemod ./src/index.ts",
+    "build": "tsc"
   },
   "author": "EtshD1",
   "license": "ISC",
