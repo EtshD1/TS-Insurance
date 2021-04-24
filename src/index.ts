@@ -6,15 +6,24 @@ interface Action {
   payload: any
 }
 // Action Creators
-const createClaim = (name: string, amount: number): object => (
-  {
+const createClaim = (name: string, amount: number): object => {
+  if (amount > 40) {
+    return {
+      type: types.CREATE_CLAIM,
+      payload: {
+        name,
+        amount: 40
+      }
+    }
+  }
+  return {
     type: types.CREATE_CLAIM,
     payload: {
       name,
       amount
     }
   }
-);
+};
 
 const createPolicy = (name: string): object => ({
   type: types.CREATE_POLICY,
