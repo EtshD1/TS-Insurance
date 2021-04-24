@@ -57,3 +57,10 @@ const policies = (policyList: Array<object> = [], action: Action): Array<object>
     return policyList;
   }
 }
+
+// Company setup
+const reducers = combineReducers({
+  accounting,
+  claimsHistory,
+  policies
+});
