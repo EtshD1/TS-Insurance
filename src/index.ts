@@ -42,8 +42,18 @@ const claimsHistory = (history: Array<object>, action: Action): Array<object> =>
 const accounting = (wallet: number, action: Action): number => {
   if (action.type === types.CREATE_CLAIM) {
     return wallet - action.payload.amount;
-  } else if (action.type) {
+  } else if (action.type === types.CREATE_POLICY) {
     return wallet + action.payload.amount;
   }
   return wallet;
+}
+
+const policies = (policyList: Array<object>, action: Action): Array<object> => {
+  if (action.type === types.CREATE_POLICY) {
+    return [...policyList, action.payload.name];
+  } else if (action.type === types.DELTE_POLICY) {
+    return policyList.filter(poilcy => poilcy != action.payload.name);
+  } else {
+    return policyList;
+  }
 }
