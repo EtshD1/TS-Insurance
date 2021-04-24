@@ -34,7 +34,7 @@ const createPolicy = (name: string): InsuranceActions => ({
 });
 
 const deletePolicy = (name: string): InsuranceActions => ({
-  type: types.CREATE_POLICY,
+  type: types.DELTE_POLICY,
   payload: {
     name: name
   }
