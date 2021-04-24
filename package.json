@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "node ./dist/index.js",
-    "dev": "nodemod ./src/index.ts",
+    "dev": "nodemon ./src/index.ts",
     "build": "tsc"
   },
   "author": "EtshD1",
