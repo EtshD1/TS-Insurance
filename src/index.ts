@@ -38,3 +38,12 @@ const claimsHistory = (history: Array<object>, action: Action): Array<object> =>
   }
   return history
 };
+
+const accounting = (wallet: number, action: Action): number => {
+  if (action.type === types.CREATE_CLAIM) {
+    return wallet - action.payload.amount;
+  } else if (action.type) {
+    return wallet + action.payload.amount;
+  }
+  return wallet;
+}
