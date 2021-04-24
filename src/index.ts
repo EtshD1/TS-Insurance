@@ -32,14 +32,14 @@ const deletePolicy = (name: string): object => ({
 });
 
 // Reducers
-const claimsHistory = (history: Array<object>, action: Action): Array<object> => {
+const claimsHistory = (history: Array<object> = [], action: Action): Array<object> => {
   if (action.type === types.CREATE_CLAIM) {
     return [...history, action.payload];
   }
   return history
 };
 
-const accounting = (wallet: number, action: Action): number => {
+const accounting = (wallet: number = 100, action: Action): number => {
   if (action.type === types.CREATE_CLAIM) {
     return wallet - action.payload.amount;
   } else if (action.type === types.CREATE_POLICY) {
@@ -48,7 +48,7 @@ const accounting = (wallet: number, action: Action): number => {
   return wallet;
 }
 
-const policies = (policyList: Array<object>, action: Action): Array<object> => {
+const policies = (policyList: Array<object> = [], action: Action): Array<object> => {
   if (action.type === types.CREATE_POLICY) {
     return [...policyList, action.payload.name];
   } else if (action.type === types.DELTE_POLICY) {
