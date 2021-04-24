@@ -18,3 +18,10 @@ const createPolicy = (name: string): object => ({
     amount: 20
   }
 });
+
+const deletePolicy = (name: string): object => ({
+  type: types.CREATE_POLICY,
+  paylord: {
+    name: name
+  }
+});
