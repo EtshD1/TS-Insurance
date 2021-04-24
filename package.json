@@ -1,0 +1,11 @@
+{
+  "name": "tsinsurancecompany",
+  "version": "1.0.0",
+  "description": "TypeScript InsuranceCompany using Redux",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "EtshD1",
+  "license": "ISC"
+}
