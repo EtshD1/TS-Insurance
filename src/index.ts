@@ -77,3 +77,15 @@ const reducers = combineReducers({
 const store = createStore(reducers);
 
 store.dispatch(createPolicy('Alex'));
+store.dispatch(createPolicy('Sara'));
+store.dispatch(createPolicy('Etsh'));
+
+store.dispatch(createClaim('Alex', 15));
+store.dispatch(deletePolicy('Alex'));
+
+store.dispatch(createClaim('Etsh', 5));
+store.dispatch(deletePolicy('Etsh'));
+
+store.dispatch(createClaim('Sara', 100));
+store.dispatch(deletePolicy('Sara'));
+console.log(store.getState());
