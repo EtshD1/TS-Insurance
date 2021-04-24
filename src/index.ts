@@ -10,3 +10,11 @@ const createClaim = (name: string, amount: number): object => (
     }
   }
 );
+
+const createPolicy = (name: string): object => ({
+  type: types.CREATE_POLICY,
+  paylord: {
+    name: name,
+    amount: 20
+  }
+});
