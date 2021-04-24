@@ -1,6 +1,10 @@
 import { createStore, combineReducers } from '@reduxjs/toolkit';
 import types from "./types";
 
+interface Action {
+  type: string;
+  payload: any
+}
 // Action Creators
 const createClaim = (name: string, amount: number): object => (
   {
@@ -28,7 +32,7 @@ const deletePolicy = (name: string): object => ({
 });
 
 // Reducers
-const claimsHistory = (history: Array<object>, action: { type: string, payload: object }): Array<object> => {
+const claimsHistory = (history: Array<object>, action: Action): Array<object> => {
   if (action.type === types.CREATE_CLAIM) {
     return [...history, action.payload];
   }
